@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="atividadeFormulario">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular-1.7.4/angular.js"></script>
+    <script>
+        angular.module("atividadeFormulario", []);
+        angular.module("atividadeFormulario").controller("atividadeFormularioCtrl", function ($scope) {
+            $scope.app = "Alunos";
+            $scope.alunos = [
+            ];
+            $scope.adicionarAluno = function (aluno) {
+                $scope.alunos.push(angular.copy(aluno));
+                delete $scope.aluno;
+            };
+        });
+    </script>
+</head>
+<body ng-controller="atividadeFormularioCtrl">
+    <form action="" method="post">
+        <label for="nome">Nome</label>
+        <input type="text " id="nome" ng-model="name" placeholder="Digite seu nome" required><br>
+
+        <label for="matricula">Matrícula</label>
+        <input type="text" id="matricula" ng-model="name" placeholder="Digite sua matrícula" required><br>
+
+        <label for="sexo">Sexo</label>
+        <select id="sexo">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select><br>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" ng-model="name" placeholder="Digite seu email"><br>
+
+        <input type="submit" name="Enviar">
+    </form>
+</body>
+</html>
